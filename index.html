@@ -3,202 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSOWA | المستشفى الذكي المتنقل</title>
+    <title>INSOWA | مستشفى الذكاء الاصطناعي المتكامل</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00d2ff;
-            --secondary: #3a7bd5;
-            --dark: #0f2027;
-            --glass: rgba(255, 255, 255, 0.1);
+            --neon-blue: #00d2ff;
+            --deep-red: #ff4b2b;
+            --dark-bg: #050a10;
+            --glass-white: rgba(255, 255, 255, 0.05);
         }
 
         body {
             font-family: 'Cairo', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
             margin: 0;
-            background: #f0f2f5;
-            color: #333;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* Hero Section */
         header {
-            background: linear-gradient(rgba(15, 32, 39, 0.8), rgba(15, 32, 39, 0.8)), 
-                        url('1000344566.jpg'); /* استخدام إحدى صورك كخلفية */
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(5,10,16,0.9), rgba(0,210,255,0.2)), url('1000344566.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
-            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            border-bottom: 3px solid var(--neon-blue);
         }
 
-        .hero-text h1 { font-size: 4.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero-text p { font-size: 1.8rem; font-weight: 300; }
+        .hero-box h1 { font-size: 5rem; margin: 0; background: linear-gradient(to right, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .badge { background: var(--deep-red); padding: 8px 25px; border-radius: 50px; font-weight: bold; animation: pulse 2s infinite; }
 
-        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
 
-        /* Showcase Gallery - عرض صورك هنا */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: -50px;
-        }
+        /* Showcase Gallery */
+        .showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: -80px; }
+        .showcase-card { background: var(--glass-white); backdrop-filter: blur(10px); padding: 15px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .showcase-card:hover { border-color: var(--neon-blue); transform: translateY(-10px); }
+        .showcase-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; }
+        .showcase-card p { text-align: center; margin-top: 15px; font-weight: bold; color: var(--neon-blue); }
 
-        .gallery-item {
-            background: white;
-            padding: 10px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+        /* Vitals Section */
+        .vitals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 60px 0; text-align: center; }
+        .vital-box { background: rgba(0,210,255,0.1); padding: 20px; border-radius: 15px; border-bottom: 4px solid var(--neon-blue); }
+        .vital-box i { font-size: 2.5rem; margin-bottom: 10px; color: var(--neon-blue); }
 
-        .gallery-item:hover { transform: scale(1.05); }
+        /* Content Sections */
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 50px; }
+        .section-title span { color: var(--neon-blue); }
 
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+        .feature-box { background: var(--glass-white); padding: 40px; border-radius: 30px; margin-bottom: 30px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+        .feature-icon { font-size: 5rem; color: var(--neon-blue); }
+        .feature-text { flex: 1; }
 
-        .gallery-item p { text-align: center; font-weight: bold; margin-top: 10px; color: var(--secondary); }
+        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,75,43,0); } 50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,75,43,0.5); } 100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,75,43,0); } }
 
-        /* Tech Specs Section */
-        .spec-box {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-            border-right: 8px solid var(--primary);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .ai-badge {
-            background: linear-gradient(to left, #00d2ff, #3a7bd5);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        /* Featured Content */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--dark);
-            color: white;
-            padding: 30px;
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .feature-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
-
-        .hospital-callout {
-            background: #ff4b2b;
-            color: white;
-            padding: 40px;
-            border-radius: 30px;
-            text-align: center;
-            margin: 60px 0;
-            font-size: 2rem;
-            font-weight: 900;
-        }
-
-        footer { background: var(--dark); color: white; padding: 40px; text-align: center; }
-
+        footer { text-align: center; padding: 50px; background: #020508; border-top: 1px solid #1a1a1a; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="hero-text">
-            <div class="ai-badge">مدعوم بالذكاء الاصطناعي الكامل</div>
-            <h1>INSOWA Neuro-Glove</h1>
-            <p>أكثر من مجرد قفاز.. إنه مستقبلك الصحي بين يديك</p>
+        <div class="hero-box">
+            <div class="badge">مستشفى INSOWA الذكي المتنقل</div>
+            <h1>NEURO GLOVE</h1>
+            <p style="font-size: 1.5rem;">تكنولوجيا تعالج، تتنبأ، وتدعم الصحة النفسية</p>
         </div>
     </header>
 
     <div class="container">
         
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="1000344564.jpg" alt="INSOWA Board">
-                <p>لوحة التحكم الذكية</p>
+        <div class="showcase">
+            <div class="showcase-card">
+                <img src="1000344566.jpg" alt="Final Product">
+                <p>التصميم النهائي للقفاز</p>
             </div>
-            <div class="gallery-item">
-                <img src="1000344565.jpg" alt="Sensors Detail">
-                <p>نظام الحساسات الحيوية</p>
-            </div>
-            <div class="gallery-item">
-                <img src="1000344566.jpg" alt="Final Design">
-                <p>التصميم النهائي المريح</p>
-            </div>
-            <div class="gallery-item">
-                <img src="1000344554.jpg" alt="Production">
+            <div class="showcase-card">
+                <img src="1000344564.jpg" alt="PCB Board">
                 <p>وحدة المعالجة المركزية</p>
             </div>
-        </div>
-
-        <div class="hospital-callout">
-            <i class="fas fa-user-md"></i>
-            هذا ليس مجرد علاج للرعاش، إنه مستشفى كامل متنقل على يد المريض!
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-heartbeat"></i>
-                <h3>مراقب العلامات الحيوية</h3>
-                <p>يقوم القفاز بقياس نبضات القلب ونسبة الأكسجين والضغط لحظياً، ويرسل تنبيهات فورية في حالة وجود خطر.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-brain"></i>
-                <h3>التنبؤ بالأمراض المزمنة</h3>
-                <p>بفضل خوارزميات الـ AI، يمكن للجهاز التنبؤ بنوبات الضغط المرتفع والسكري قبل حدوث الأعراض الظاهرة.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-comments"></i>
-                <h3>المساعد النفسي الذكي</h3>
-                <p>ذكاء اصطناعي صوتي متكامل يتحدث مع المريض، يذكره بمواعيد الدواء، ويحسن من حالته المزاجية والنفسية.</p>
+            <div class="showcase-card">
+                <img src="1000344565.jpg" alt="Sensors Hub">
+                <p>نظام التنبؤ الاستباقي</p>
             </div>
         </div>
 
-        <div class="spec-box">
-            <div class="ai-badge">تكنولوجيا فريدة</div>
-            <h2>علاج الصداع والشد العضلي</h2>
-            <p>يحتوي القفاز على نظام <b>Vibro-Therapy</b> مخصص، حيث يتم التحكم في مواتير اهتزاز إضافية تعمل بترددات طبية مدروسة لفك التشنجات العضلية وعلاج الصداع النصفي الناتج عن الإجهاد.</p>
-            <p><b>كيف يعمل؟</b> يتم توجيه النبضات عبر نهايات الأعصاب لتقليل الإشارات العصبية للألم، مما يوفر راحة فورية بدون أدوية.</p>
+        <h2 class="section-title">مراقبة <span>صحية</span> شاملة</h2>
+        <div class="vitals-grid">
+            <div class="vital-box"><i class="fas fa-heartbeat"></i><br>نبض القلب</div>
+            <div class="vital-box"><i class="fas fa-tint"></i><br>ضغط الدم</div>
+            <div class="vital-box"><i class="fas fa-lungs"></i><br>الأكسجين</div>
+            <div class="vital-box"><i class="fas fa-brain"></i><br>التنبؤ بالسكر</div>
         </div>
 
-        <section style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.5rem;">كيف يخدم <span>INSOWA</span> الناس؟</h2>
-            <div class="grid" style="display: flex; gap: 20px; text-align: right; margin-top: 30px;">
-                <div style="flex: 1; background: white; padding: 20px; border-radius: 15px;">
-                    <h4>للمرضى</h4>
-                    <p>استعادة القدرة على الأكل والشرب والكتابة بكرامة كاملة وبدون مساعدة.</p>
-                </div>
-                <div style="flex: 1; background: white; padding: 20px; border-radius: 15px;">
-                    <h4>للأطباء</h4>
-                    <p>الحصول على تقارير دقيقة (Log Files) من خلال تطبيق الأندرويد لمتابعة تطور الحالة عن بُعد.</p>
-                </div>
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fas fa-robot"></i></div>
+            <div class="feature-text">
+                <h3>ذكاء اصطناعي للتحليل والتنبؤ</h3>
+                <p>النظام مش بس بيعالج الرعشة، ده مستشفى كامل بيحلل بياناتك لحظياً ويقدر يتنبأ بأي نوبات ضغط أو سكر قبل ما تحصل، ويبعت تنبيهات فورية للتطبيق.</p>
             </div>
-        </section>
+        </div>
+
+        <div class="feature-box" style="border-right: 5px solid var(--neon-blue);">
+            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <div class="feature-text">
+                <h3>المساعد النفسي الصوتي</h3>
+                <p>مدمج داخل النظام AI بيتكلم مع المريض، بيشجعه، وبيحسن حالته النفسية، لأن الحالة النفسية هي نص العلاج.</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fas fa-magic"></i></div>
+            <div class="feature-text">
+                <h3>علاج الصداع والشد العضلي</h3>
+                <p>بفضل مواتير الاهتزاز المتخصصة، الجهاز بيقدم جلسات تدليك علاجية مبرمجة لعلاج الصداع النصفي وفك أي شد عضلي ناتج عن التوتر.</p>
+            </div>
+        </div>
+
     </div>
 
     <footer>
-        <p>جميع الحقوق محفوظة لفريق INSOWA - ثورة في عالم الهندسة الطبية 2026</p>
-        <p><i class="fab fa-github"></i> تفقد الكود المصدري على مستودعنا</p>
+        <h2>INSOWA - نحن نصنع الأمل</h2>
+        <p>مشروع تخرج متكامل | فبراير 2026</p>
+        <div style="font-size: 2rem; margin-top: 15px; color: var(--neon-blue);">
+            <i class="fab fa-github"></i> <i class="fab fa-linkedin"></i>
+        </div>
     </footer>
 
 </body>
