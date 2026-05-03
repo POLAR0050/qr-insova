@@ -1,55 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>My Project</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSOWA | Neuro Gloves - مستقبل تأهيل مرضى باركنسون</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #2c3e50;
+            --accent-color: #17a2b8;
+            --light-bg: #f8f9fa;
+            --text-dark: #333;
+        }
+
         body {
-            font-family: Arial;
-            background: #0f172a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        .tagline { font-size: 1.5rem; opacity: 0.9; }
+
+        /* Sections */
+        section { padding: 60px 0; border-bottom: 1px solid #eee; }
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        /* Problem & Solution Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Specs Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .specs-table td, .specs-table th {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        .specs-table th { background-color: var(--primary-color); color: white; }
+
+        /* Pricing Badge */
+        .price-highlight {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 30px 0;
         }
-        h1 { color: #38bdf8; }
-        section {
-            margin: 30px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .tagline { font-size: 1.1rem; }
         }
     </style>
 </head>
-
 <body>
 
-<h1>Sentinel AI</h1>
-<p>AI system to protect and grow businesses</p>
+    <header>
+        <div class="container">
+            <h1>INSOWA</h1>
+            <p class="tagline">الابتكار في خدمة الصحة: قفازات Neuro Gloves لمرضى باركنسون</p>
+        </div>
+    </header>
 
-<section>
-<h2>Team</h2>
-<p>Write your team members here</p>
-</section>
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">عن المشروع</h2>
+            <div class="grid">
+                <div>
+                    <h3>ما هو Neuro Gloves؟</h3>
+                    <p>قفاز ذكي مخصص لإعادة التأهيل، مصمم لمساعدة مرضى باركنسون (الشلل الرعاش) على تقليل اهتزازات اليد واستعادة استقلاليتهم في ممارسة أنشطتهم اليومية.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/400x250?text=Neuro+Gloves+Design" alt="Neuro Glove" style="width:100%; border-radius:10px;">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-<h2>Project Idea</h2>
-<p>Describe your idea simply</p>
-</section>
+    <section id="solution" style="background-color: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">لماذا نحتاج هذا الابتكار؟</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>المشكلة</h3>
+                    <p>يعاني أكثر من 10 ملايين مريض عالمياً من باركنسون. الحلول الحالية باهظة الثمن، وتتطلب جلسات علاج طبيعي مرهقة ومكلفة لكبار السن.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>الحل</h3>
+                    <p>نقدم قفازاً ذكياً يولد أنماط اهتزاز مدروسة لتهدئة العضلات المتأثرة، مما يتيح للمريض التحكم بشكل أفضل في حركة يده بتكلفة اقتصادية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-<h2>Device</h2>
-<p>Explain your device (ESP32 - sensors...)</p>
-</section>
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">المواصفات التقنية (Features)</h2>
+            <div class="grid">
+                <ul style="list-style: none; padding: 0;">
+                    <li><i class="fas fa-check-circle" style="color: green;"></i> مستشعر حركة MPU6050 دقيق.</li>
+                    <li><i class="fas fa-check-circle" style="color: green;"></i> وحدة تحكم ESP متطورة.</li>
+                    <li><i class="fas fa-check-circle" style="color: green;"></i> 18 محرك اهتزاز عالي الدقة.</li>
+                    <li><i class="fas fa-check-circle" style="color: green;"></i> بطارية 2000 mAh قابلة للشحن.</li>
+                    <li><i class="fas fa-check-circle" style="color: green;"></i> تطبيق أندرويد مع مساعد صوتي بالذكاء الاصطناعي.</li>
+                </ul>
+                <div>
+                    <table class="specs-table">
+                        <tr>
+                            <th>الميزة</th>
+                            <th>التفاصيل</th>
+                        </tr>
+                        <tr>
+                            <td>الكفاءة</td>
+                            <td>98.5%</td>
+                        </tr>
+                        <tr>
+                            <td>التصميم</td>
+                            <td>3D Ergonomic Modular</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-<h2>Demo</h2>
-<p>Add video link here</p>
-</section>
+    <section id="cost" style="background-color: #fff;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">الميزة التنافسية</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>التكلفة المحلية</h3>
+                    <p>حوالي 1500 جنيه مصري</p>
+                </div>
+                <div class="card">
+                    <h3>الحلول المستوردة</h3>
+                    <p>تصل إلى 15,000 جنيه مصري</p>
+                </div>
+            </div>
+            <div class="price-highlight">تقليل التكلفة بنسبة 10 أضعاف (10x Cost Reduction)</div>
+        </div>
+    </section>
 
-<section>
-<h2>Contact</h2>
-<p>Your email or phone</p>
-</section>
+    <section id="future">
+        <div class="container">
+            <h2 class="section-title">خطة التطوير المستقبلية</h2>
+            <div class="grid" style="text-align: center;">
+                <div class="card">تطوير تحفيز العضلات الكهربائي (EMS)</div>
+                <div class="card">دعم نظام iOS بالكامل</div>
+                <div class="card">المراقبة السحابية للمريض (Cloud-based Monitoring)</div>
+                <div class="card">خطط علاجية مخصصة عبر الذكاء الاصطناعي</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>تم تطويره بواسطة فريق **INSOVA** | فبراير 2026</p>
+            <p>مشروع مخصص للابتكار الطبي وإعادة التأهيل</p>
+            <div style="font-size: 1.5rem; margin-top: 10px;">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
