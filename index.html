@@ -3,223 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSOWA | Neuro Gloves - مستقبل تأهيل مرضى باركنسون</title>
+    <title>INSOWA | القفاز العصبي الذكي - ثورة في عالم التأهيل</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #2c3e50;
-            --accent-color: #17a2b8;
-            --light-bg: #f8f9fa;
-            --text-dark: #333;
+            --main-blue: #0062ff;
+            --dark-blue: #0a192f;
+            --accent-cyan: #00f2fe;
+            --glass: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
-            color: var(--text-dark);
-            background-color: #fff;
+            background-color: #f4f7f6;
+            color: #333;
+            scroll-behavior: smooth;
         }
 
-        /* Header & Navigation */
+        /* Hero Section */
         header {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             color: white;
-            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 20px;
+        .hero-content h1 { font-size: 4rem; font-weight: 900; margin-bottom: 20px; color: var(--accent-cyan); }
+        .hero-content p { font-size: 1.5rem; max-width: 800px; margin: auto; line-height: 1.8; }
+
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+
+        /* Sections Styling */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--dark-blue); }
+        .section-title span { color: var(--main-blue); }
+
+        /* Tech Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--main-blue);
         }
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 3rem; color: var(--main-blue); margin-bottom: 20px; }
 
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        .tagline { font-size: 1.5rem; opacity: 0.9; }
+        /* AI Section */
+        .ai-section { background: var(--dark-blue); color: white; border-radius: 30px; padding: 50px; margin: 40px 0; }
+        .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
 
-        /* Sections */
-        section { padding: 60px 0; border-bottom: 1px solid #eee; }
-        .section-title {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 40px;
-            font-size: 2rem;
-        }
+        /* Visuals */
+        .device-img { width: 100%; border-radius: 15px; margin-bottom: 15px; object-fit: cover; height: 200px; background: #eee; }
 
-        /* Problem & Solution Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+        /* Comparison Table */
+        .table-container { overflow-x: auto; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; }
+        th, td { padding: 20px; text-align: right; border-bottom: 1px solid #eee; }
+        th { background: var(--main-blue); color: white; }
 
-        .card {
-            background: var(--light-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover { transform: translateY(-5px); }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Specs Table */
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .specs-table td, .specs-table th {
-            padding: 12px;
-            border: 1px solid #ddd;
-        }
-
-        .specs-table th { background-color: var(--primary-color); color: white; }
-
-        /* Pricing Badge */
-        .price-highlight {
+        /* Floating Badge */
+        .hospital-badge {
             background: #e74c3c;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
             border-radius: 50px;
-            display: inline-block;
-            margin-top: 10px;
             font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
         }
 
-        /* Footer */
-        footer {
-            background: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .tagline { font-size: 1.1rem; }
-        }
+        footer { background: var(--dark-blue); color: white; padding: 50px 0; text-align: center; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>INSOWA</h1>
-            <p class="tagline">الابتكار في خدمة الصحة: قفازات Neuro Gloves لمرضى باركنسون</p>
+        <div class="hero-content">
+            <div class="hospital-badge"><i class="fas fa-hospital"></i> ليس مجرد قفاز.. بل مستشفى متنقل</div>
+            <h1>INSOWA: Neuro Glove</h1>
+            <p>القفاز الذي يعيد تعريف الحياة لمرضى الشلل الرعاش (باركنسون). تكنولوجيا تتنبأ بالأمراض، تحلل البيانات بالذكاء الاصطناعي، وتعيد لك التحكم في حياتك.</p>
+            <div style="margin-top: 30px;">
+                <a href="#about" style="background: var(--accent-cyan); color: var(--dark-blue); padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold;">اكتشف القوة</a>
+            </div>
         </div>
     </header>
 
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">عن المشروع</h2>
-            <div class="grid">
-                <div>
-                    <h3>ما هو Neuro Gloves؟</h3>
-                    <p>قفاز ذكي مخصص لإعادة التأهيل، مصمم لمساعدة مرضى باركنسون (الشلل الرعاش) على تقليل اهتزازات اليد واستعادة استقلاليتهم في ممارسة أنشطتهم اليومية.</p>
-                </div>
-                <div>
-                    <img src="https://via.placeholder.com/400x250?text=Neuro+Gloves+Design" alt="Neuro Glove" style="width:100%; border-radius:10px;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="solution" style="background-color: var(--light-bg);">
-        <div class="container">
-            <h2 class="section-title">لماذا نحتاج هذا الابتكار؟</h2>
+    <div class="container">
+        
+        <section id="devices">
+            <h2 class="section-title">منظومة <span>INSOWA</span> المتكاملة</h2>
             <div class="grid">
                 <div class="card">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h3>المشكلة</h3>
-                    <p>يعاني أكثر من 10 ملايين مريض عالمياً من باركنسون. الحلول الحالية باهظة الثمن، وتتطلب جلسات علاج طبيعي مرهقة ومكلفة لكبار السن.</p>
+                    <img src="https://via.placeholder.com/400x250?text=Neuro+Glove+Main" class="device-img" alt="Neuro Glove">
+                    <h3>القفاز العصبي (The Core)</h3>
+                    <p>يعمل عبر 18 موتور اهتزاز دقيق يتم التحكم بها بخوارزميات معقدة لامتصاص الرعشة فور حدوثها، مما يمنح المريض ثباتاً فورياً بنسبة نجاح تصل لـ 98.5%.</p>
                 </div>
+
                 <div class="card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>الحل</h3>
-                    <p>نقدم قفازاً ذكياً يولد أنماط اهتزاز مدروسة لتهدئة العضلات المتأثرة، مما يتيح للمريض التحكم بشكل أفضل في حركة يده بتكلفة اقتصادية.</p>
+                    <img src="https://via.placeholder.com/400x250?text=Bio+Sensors" class="device-img" alt="Vitals Tracker">
+                    <h3>المحلل الحيوي الشامل</h3>
+                    <p>يقيس نبضات القلب، تشبع الأكسجين، ودرجة الحرارة لحظياً. بفضل حساساتنا المتطورة، يمكن للقفاز التنبؤ بالأزمات المزمنة مثل <b>ارتفاع ضغط الدم</b> قبل وقوعها.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>نظام التدليك العلاجي</h3>
+                    <p>مزود بمواتير متخصصة تعمل بترددات معينة لعلاج <b>الشد العضلي والصداع</b>، مما يجعله رفيقاً صحياً متكاملاً وليس فقط لمرضى الرعاش.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="features">
-        <div class="container">
-            <h2 class="section-title">المواصفات التقنية (Features)</h2>
-            <div class="grid">
-                <ul style="list-style: none; padding: 0;">
-                    <li><i class="fas fa-check-circle" style="color: green;"></i> مستشعر حركة MPU6050 دقيق.</li>
-                    <li><i class="fas fa-check-circle" style="color: green;"></i> وحدة تحكم ESP متطورة.</li>
-                    <li><i class="fas fa-check-circle" style="color: green;"></i> 18 محرك اهتزاز عالي الدقة.</li>
-                    <li><i class="fas fa-check-circle" style="color: green;"></i> بطارية 2000 mAh قابلة للشحن.</li>
-                    <li><i class="fas fa-check-circle" style="color: green;"></i> تطبيق أندرويد مع مساعد صوتي بالذكاء الاصطناعي.</li>
-                </ul>
+        <section class="ai-section">
+            <div class="ai-grid">
                 <div>
-                    <table class="specs-table">
+                    <h2>عقل اصطناعي (AI) يراقبك</h2>
+                    <p>نظام INSOWA مزود بمحرك ذكاء اصطناعي يقوم بـ:</p>
+                    <ul>
+                        <li><b>تحليل البيانات الضخمة:</b> دراسة نمط الرعشة وتخصيص العلاج لكل مريض.</li>
+                        <li><b>التنبؤ الطبي:</b> إرسال تنبيهات استباقية للأهل أو الطبيب في حالة رصد علامات غير طبيعية.</li>
+                        <li><b>المساعد النفسي:</b> AI صوتي يتحدث مع المريض، يقدم الدعم النفسي، ويقلل من الشعور بالعزلة.</li>
+                    </ul>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-brain" style="font-size: 10rem; color: var(--accent-cyan);"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <h2 class="section-title">كيف يغير <span>INSOWA</span> حياة الناس؟</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>تطبيق التحكم الكامل</h3>
+                    <p>تطبيق أندرويد سهل الاستخدام يسمح للمريض بتغيير أوضاع الاهتزاز، متابعة تقاريره الصحية، والتواصل مع المساعد الصوتي.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>استقلالية تامة</h3>
+                    <p>يساعد المرضى على الأكل، الشرب، والكتابة بمفردهم، مما يرفع من حالتهم النفسية ويقلل حاجتهم لمرافق دائم.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>توفير اقتصادي</h3>
+                    <p>يوفر 10 أضعاف تكلفة الأجهزة المستوردة، مما يجعله الخيار الأول والوحيد القابل للانتشار محلياً وعالمياً.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">المواصفات <span>الفنية</span></h2>
+            <div class="table-container">
+                <table>
+                    <thead>
                         <tr>
                             <th>الميزة</th>
-                            <th>التفاصيل</th>
+                            <th>قفاز INSOWA الذكي</th>
+                            <th>المنافسين (الأجهزة المستوردة)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>تحليل العلامات الحيوية</td>
+                            <td>نظام مستشفى متكامل (قلب، ضغط، حرارة)</td>
+                            <td>غير متوفر (رعاش فقط)</td>
                         </tr>
                         <tr>
-                            <td>الكفاءة</td>
-                            <td>98.5%</td>
+                            <td>الذكاء الاصطناعي</td>
+                            <td>تحليل تنبؤي + مساعد صوتي</td>
+                            <td>برمجة ثابتة</td>
                         </tr>
                         <tr>
-                            <td>التصميم</td>
-                            <td>3D Ergonomic Modular</td>
+                            <td>التطبيقات العلاجية</td>
+                            <td>رعاش، صداع، شد عضلي</td>
+                            <td>رعاش فقط</td>
                         </tr>
-                    </table>
-                </div>
+                        <tr>
+                            <td>التكلفة</td>
+                            <td>~1500 جنيه (اقتصادية)</td>
+                            <td>~15000 جنيه (باهظة)</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="cost" style="background-color: #fff;">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">الميزة التنافسية</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>التكلفة المحلية</h3>
-                    <p>حوالي 1500 جنيه مصري</p>
-                </div>
-                <div class="card">
-                    <h3>الحلول المستوردة</h3>
-                    <p>تصل إلى 15,000 جنيه مصري</p>
-                </div>
-            </div>
-            <div class="price-highlight">تقليل التكلفة بنسبة 10 أضعاف (10x Cost Reduction)</div>
-        </div>
-    </section>
-
-    <section id="future">
-        <div class="container">
-            <h2 class="section-title">خطة التطوير المستقبلية</h2>
-            <div class="grid" style="text-align: center;">
-                <div class="card">تطوير تحفيز العضلات الكهربائي (EMS)</div>
-                <div class="card">دعم نظام iOS بالكامل</div>
-                <div class="card">المراقبة السحابية للمريض (Cloud-based Monitoring)</div>
-                <div class="card">خطط علاجية مخصصة عبر الذكاء الاصطناعي</div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <footer>
         <div class="container">
-            <p>تم تطويره بواسطة فريق **INSOVA** | فبراير 2026</p>
-            <p>مشروع مخصص للابتكار الطبي وإعادة التأهيل</p>
-            <div style="font-size: 1.5rem; margin-top: 10px;">
-                <i class="fab fa-github"></i>
-                <i class="fab fa-linkedin"></i>
+            <h2>INSOWA Team - فبراير 2026</h2>
+            <p>نحن لا نصنع قفازات، نحن نصنع مستقبلاً أفضل للإنسانية.</p>
+            <div style="font-size: 2rem; margin-top: 20px;">
+                <i class="fab fa-github"></i> &nbsp;
+                <i class="fab fa-linkedin"></i> &nbsp;
+                <i class="fas fa-envelope"></i>
             </div>
         </div>
     </footer>
