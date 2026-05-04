@@ -2,42 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>INSOVA | Neuro Glove</title>
 
 <style>
 body {
-    font-family: Arial;
+    margin: 0;
+    font-family: Arial, sans-serif;
     background: #0f172a;
     color: white;
-    margin: 0;
+}
+
+/* Header */
+header {
+    padding: 40px 20px;
+    background: linear-gradient(135deg,#020617,#1e293b);
     text-align: center;
 }
 
-header {
-    background: #020617;
-    padding: 30px;
-}
-
 header img {
-    width: 120px;
+    width: 100px;
 }
 
 h1 {
+    margin: 10px 0;
     color: #38bdf8;
 }
 
-section {
-    margin: 20px;
+.container {
+    max-width: 900px;
+    margin: auto;
     padding: 20px;
+}
+
+.card {
     background: #1e293b;
+    margin: 20px 0;
+    padding: 20px;
     border-radius: 15px;
 }
 
-img {
-    border-radius: 15px;
+.card h2 {
+    color: #38bdf8;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.images img {
+    width: 250px;
     margin: 10px;
+    border-radius: 15px;
 }
 
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.7;
+}
 </style>
 </head>
 
@@ -49,86 +74,68 @@ img {
 <p>Neuro Glove - Smart Rehabilitation System</p>
 </header>
 
-<section>
-<h2>🚨 Problem</h2>
+<div class="container">
+
+<div class="card">
+<h2>Problem</h2>
 <p>
-Parkinson’s and stroke affect millions. Patients suffer from hand tremors and limited movement.  
-Traditional rehabilitation devices are bulky, expensive ($5000+), and only available in clinics. :contentReference[oaicite:0]{index=0}
+Millions suffer from Parkinson’s and stroke.  
+Current rehabilitation devices are expensive, bulky, and limited to clinics.
 </p>
-</section>
+</div>
 
-<section>
-<h2>💡 Solution - Neuro Glove</h2>
+<div class="card">
+<h2>Solution</h2>
 <p>
-A lightweight wearable glove that translates muscle signals into real-time movement assistance.  
-Fully wireless, affordable, and designed for home therapy anytime, anywhere. :contentReference[oaicite:1]{index=1}
+Neuro Glove is a wearable device that reads muscle signals and helps restore hand movement in real time using AI.
 </p>
-</section>
+</div>
 
-<section>
-<h2>⚙️ How It Works</h2>
+<div class="card">
+<h2>How It Works</h2>
 <p>
-- EMG sensors detect muscle signals  
-- AI processes signals in real-time  
-- Vibration system assists movement  
-- 3 modes: Automatic, Manual, Therapy :contentReference[oaicite:2]{index=2}
+EMG sensors detect muscle activity → AI processes data → vibration assists movement.  
+Includes Automatic, Manual, and Therapy modes.
 </p>
-</section>
+</div>
 
-<section>
-<h2>🔥 Features</h2>
-<p>
-- Lightweight under 200g  
-- 8+ hours battery  
-- USB-C charging  
-- 80% cheaper than medical devices :contentReference[oaicite:3]{index=3}
-</p>
-</section>
+<div class="card">
+<h2>Devices</h2>
 
-<section>
-<h2>🧠 Target Users</h2>
-<p>
-Stroke patients, elderly care, rehabilitation clinics, and home therapy users. :contentReference[oaicite:4]{index=4}
-</p>
-</section>
-
-<section>
-<h2>🧪 Devices</h2>
-
-<img src="Neuro glove.png" width="250">
-<img src="Box.png" width="250">
-<img src="Spoon.png" width="250">
+<div class="images">
+<img src="Neuro glove.png">
+<img src="Box.png">
+<img src="Spoon.png">
+</div>
 
 <p>
-Includes Smart Spoon for independent eating and reaction system for patient monitoring. :contentReference[oaicite:5]{index=5}
+Includes smart spoon for independent eating and full control system.
 </p>
+</div>
 
-</section>
-
-<section>
-<h2>👥 Team INSOVA</h2>
+<div class="card">
+<h2>Team</h2>
 <p>
-Ibrahim Khaled - Team Leader & Electronics <br>
-Abdelrahman Sayed - Software Developer <br>
-Mohamed Reda - Electronics <br>
-Abanoub Alameer - Public Relations <br>
-Mostafa Abd-Elqader - Designer :contentReference[oaicite:6]{index=6}
+Ibrahim Khaled – Leader<br>
+Abdelrahman Sayed – Software<br>
+Mohamed Reda – Electronics<br>
+Abanoub – PR<br>
+Mostafa – Designer
 </p>
-</section>
+</div>
 
-<section>
-<h2>🚀 Achievement</h2>
+<div class="card">
+<h2>Achievement</h2>
 <p>
-🥈 2nd Place - Banha University Healthcare Hackathon 2026 :contentReference[oaicite:7]{index=7}
+2nd Place – Banha Healthcare Hackathon 2026
 </p>
-</section>
+</div>
 
-<section>
-<h2>📩 Contact</h2>
-<p>
-team@neurogloves.com
-</p>
-</section>
+</div>
+
+<footer>
+INSOVA Team © 2026
+</footer>
 
 </body>
 </html>
